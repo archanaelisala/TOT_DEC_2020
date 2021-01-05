@@ -1,0 +1,60 @@
+{% extends 'sa/base.html' %}
+{% block title %}ceh{% endblock %}
+{% block content %}
+{% load static %}
+{% load embed_video_tags %}
+
+<div align="right" style="padding-top: 10px;padding-right: 10px;">
+	<span class="black" style=" 
+    background-color: #231F20;
+    color: #FFF;
+    padding: .1em 2em .1em 4em;"><small>CHAPTER</small> <span class="size" style="color: #C6C8CA;
+    font-size: 400%;
+    vertical-align: middle;">1</span></span>
+</div>
+<div class="container col-md-10"  style="padding-left: 10px;margin-top: 3em; font-family: Brush Script MT">
+
+
+	<h3 class="h3" id="lev1"><strong> Security 101</h3>
+
+
+	<strong><p>If you’re going to start a journey toward an ethical hacking certification, it should follow that the fundamental definitions and terminology involved with security should be right at the starting line. We’re not going to cover everything involved in IT security here—it’s simply too large a topic, we don’t have space, and you won’t be tested on every element anyway—but there is a foundation of 101-level knowledge you should have before wading out of the shallow end. This chapter covers the terms you’ll need to know to sound intelligent when discussing security matters with other folks. And, perhaps just as importantly, we’ll cover some basics of TCP/IP networking because, after all, if you don’t understand the language, how are you going to work your way into the conversation?</p>
+
+	<h3 id="lev1sec1"><strong> Essentials</h4>
+
+
+	<p >Before we can get into what a hacker is and how you become one in our romp through the introductory topics here, there are a couple things I need to get out of the way. First, even though I covered most of this in that Shakespearean introduction for the book, I want to talk a little bit about this exam and what you need to know, and do, to pass it. Why repeat myself? Because after reading reviews, comments, and e-mails from our first few outings, it has come to my attention almost none of you actually <em>read</em> the introduction. I don’t blame you; I skip it too on most certification study books, just going right for the meat. But there’s good stuff there you really need to know before reading further, so I’ll do a quick rundown for you up front.</p>
+
+
+	<p >Second, we need to cover some security and network basics that will help you on your exam. Some of this section is simply basic memorization, some of it makes perfect common sense, and some of it is, or should be, just plain easy. You’re really supposed to know this already, and you’ll see this stuff again and again throughout this book, but it’s truly bedrock stuff and I would be remiss if I didn’t at least provide a jumping-off point.</p>
+
+
+	<h3><span id="page_3" epub:type="pagebreak"></span><strong>The Exam</h5></strong>
+
+
+	<p >Are you sitting down? Is your heart healthy? I don’t want to distress you with this shocking revelation I’m about to throw out, so if you need a moment, go pour a bourbon (another refrain you’ll see referenced throughout this book) and get calm before you read further. Are you ready? The CEH version 10 exam is difficult, and despite hours (days, weeks) of study and multiple study sources, you may still come across a version of the exam that leaves you feeling like you’ve been hit by a truck.</p>
+
+
+	<p >I know. A guy writing and selling a study book just told you it won’t be enough. Trust me when I say it, though, I’m not kidding. <em>Of course</em> this will be a good study reference. <em>Of course</em> you can learn something from it if you really want to. <em>Of course</em> I did everything I could to make it as up to date and comprehensive as possible. But if you’re under the insane assumption this is a magic ticket, that somehow written word from October 2018 is going to magically hit the word-for-word reference on a specific test question in whatever timeframe/year you’re reading this, I sincerely encourage you to find some professional help before the furniture starts talking to you and the cat starts making sense. Those of you looking for exact test questions and rote memorization to pass the exam will not find it in this publication, <em>nor any other</em>. For the rest of you, those who want a little focused attention to prepare the right way for the exam and those looking to learn what it really means to be an ethical hacker, let’s get going with your test basics.</p>
+
+	
+
+	<div class="sidebarn" style="margin-top: 1em;
+    margin-bottom: 1em;
+    border-top: solid .1em;"><br>
+<p class="notei" ><img class="inline" src="{% static 'images/note.jpg' %}" alt="Images" width="103" height="96" data-mfp-src="/library/view/ceh-certified-ethical/9781260454567/note.jpg"></p>
+<p class="note" style="display: block;
+    " ><strong><h4>NOTE</strong></h4>&nbsp;&nbsp;&nbsp;&nbsp;I’ve been asked, a lot, what the difference is between version 9 and version 10, and the answer is, really, not much. EC-Council (ECC) added a bunch of stuff they tossed together as “IoT,” beefed up a little cloud computing, and threw a few new tools in for consideration. Otherwise, networking is still networking, and the same stuff you studied for previous versions will apply here.</p></strong>
+</div>
+
+
+<div class="card-body">
+	<a class="btn btn-primary" href="{% url 'ceh0' %}" >Back</a>
+	<a class="btn btn-primary" href="{% url 'ceh2' %}" style="margin-left: 90%; ">Next</a>
+
+</div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'DtlApp/base.html' %}
+{% block titile %} Profile ::{{user.username}}{% endblock %}
+{% block content %}
+<div class="container">
+    {% if messages %}
+	{% for j in messages %}
+	<div class="alert alert-{{j.tags}} alert-dismissible mt-2">
+  		<button type="button" class="close" data-dismiss="alert">&times;</button>
+  		{{j}}
+	</div>
+	{% endfor %}
+	{% endif %}
+	<div class="row mt-3">
+		<div class="card col-md-4 mx-2">
+			<h2 class="bg-primary text-white text-center p-2 border rounded my-2">Profile</h2>
+			<div class="card-body">
+				<img src="{{request.user.update.image.url}}" height="230px" width="100%">
+			</div>
+		</div>
+        <div class="card col-md mx-2">
+            <h2 class="bg-warning text-white text-center pt-2 border rounded my-2">Details</h2>
+            <table class="table table-bordered mx-3 my-2">
+                <tr>
+                    <th>First name</th>
+                    <td>{{user.first_name}}</td>
+                </tr>
+                <tr>
+                    <th>Last name</th>
+                    <td>{{user.last_name}}</td>
+                </tr>
+                <tr>
+                    <th>Date of Joining</th>
+                    <td>{{user.date_joined}}</td>
+                </tr>
+                <tr>
+                    <th>Last Joined</th>
+                    <td>{{user.last_login}}</td>
+                </tr>
+                <tr>
+                    <th>Age</th>
+                    <td>{{user.update.age}}</td>
+                </tr>
+            </table>
+            <a href="{% url 'update' %}" class="btn btn-success">Update</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

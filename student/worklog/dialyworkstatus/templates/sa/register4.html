@@ -1,0 +1,39 @@
+{% extends 'sa/base.html' %}
+
+{% block content %}
+{% load static %}
+<div class="container col-md-5">
+	{% if messages %}
+	{% for m in messages %}
+	<div class="alert alert-{{m.tags}} alert-dismissible" >
+  		<button type="button" class="close" data-dismiss="alert">&times;</button>
+  		<strong>{{m}}</strong>
+	</div>
+	{% endfor %}
+	{% endif %}
+	<div class="card mt-4 shadow-lg" style="margin-bottom: 20px; border-radius: 20px;"><center><img src="{% static 'images/hac.jpg' %}"></center>
+		<h2 class="bg-secondary text-white text-center mx-4 mt-3 border rounded p-2">New User Registration</h2>
+		<div class="card-body" >
+			<form method="post">
+				{% csrf_token %}
+				{{form_as.p}}
+				<table class="table table-borderless mt-1" style="height: 50%;">
+					{% for t in y %}
+					<tr>
+						<td>{{t}}</td>
+					</tr>
+					{% endfor %}
+					<tr>
+						<td><input type="text" value="CREST" class="form-control" style="color: red; font-family: Brush Script MT, Brush Script Std, cursive;width: 310px;"></td>
+					</tr>
+				</table>
+
+
+				<input type="submit" name="Register" class="btn btn-block btn-primary">
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+	

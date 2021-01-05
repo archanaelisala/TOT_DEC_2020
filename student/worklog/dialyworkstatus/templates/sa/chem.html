@@ -1,0 +1,357 @@
+
+<!-- {% block title %}ceh{% endblock %} -->
+<!-- {% block content %} -->
+{% load static %}
+{% load embed_video_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+	<!-- <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}"> -->
+	<link rel="icon" type="text/css" href="{% static 'images/hac.jpg' %}">
+  <script type="text/javascript" src="{% static 'jquery/demo.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+
+
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+
+	
+
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+	 
+	
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+
+  <style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+.row.column:hover{
+	border:1px black;
+}
+
+
+
+
+
+
+</style>
+
+
+  <body>
+
+	<center><h1 class="text-danger"style="font-family:Brush Script MT; "><img src="{% static 'images/hac.jpg' %}" style="height: 30px;width: 30px;">	CRAZY HACKERWORLD.com</h1></center>
+<div class="" style=" ">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+     
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar" style="">
+      <ul class="nav navbar-nav" style="padding-top: 5px; ">
+      	<li>
+      	 <a class="navbar-brand" href="{% url 'aboutUs' %}"><!-- <center><img src="{% static 'images/images1.png' %}" style="height: 50px; width: 50px; margin-bottom: 50px; "></center> -->
+      	 </a></li>
+        <li class="active"><a href="{% url 'cehm' %}">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Contact Us<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href=" mailto:mattinarendra222@gmail.com">Crazy HackersWorld.com</a></li>
+            <li><a href="tel:+916305967100">+91-0123456789</a></li>
+            <li><a href="tel:+917702881242">+91-112233</a></li>
+          </ul>
+        </li>
+        <li><a href="{% url 'aboutUs' %}">About Us</a></li>
+        <li><a href="#">Assignments</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      	<li>
+      	<a class="nav-link" href="{% url 'search' %}">
+        <i class="fa fa-search" aria-hidden="true" style="font-size: 25px;  color: white;"></i></a>
+
+        </li>
+         {% if user.is_authenticated %}
+        <li>
+      <a  href="{% url 'search' %}"
+         class="nav-link dropdown-toggle" data-toggle="dropdown" style="margin-right: 20px;">
+        <img  src="{{user.impfle.im.url}}" style="height: 30px;width: 30px; border-radius: 15px;">
+      Hi Welcome {{user.username}}</a>
+      <ul class="dropdown-menu dropdown-item-hover" style="margin-left: 83%;">
+      <li><a class="dropdown-item" href="{% url 'Profile' %}">Profile</a>
+      <li><a class="dropdown-item" href="{% url 'password_change' %}">Change Password</a>
+      <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+      {% endif %}
+  </li>
+
+
+        <!-- <li><a href="{% url 'register' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>		
+
+
+
+
+<div class="container" >
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="{% static 'images/Cyber_Security_Course.jpg' %}" alt="Cyber_Security_Course" style="width:100%;">
+    </div>
+
+    <div class="item">
+      <img src="{% static 'images/EC-Council_CEH.jpg' %}" alt="EC-Council_CEH" style="width:100%;">
+    </div>
+
+    <div class="item">
+      <img src="{% static 'images/Cyber_Security_Courses.jpg' %}" alt="Cyber_Security_Courses" >
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+
+
+<div class="container col-md-12"  style="padding-left: 10px;margin-top: 3em; font-family: Brush Script MT; height: auto;
+    background-color: #fff; overflow: hidden;">
+
+    <div class="" style="padding:30px; color: red;">
+    	<h1><center><strong> EC-Council Certifications </strong></center></h1>
+    </div>
+
+
+	</div>
+                           
+        <div class="row">
+            <div class="column">
+                <div class="card">           			
+                    <a href="https://www.hackerschool.in/certifications/certified-ethical-hacker-ceh">
+                    <img src="https://www.hackerschool.in/uploads/CEH.jpg" title="Certified Ethical Hacker (CEH) Course" alt="Student preparing for Certified Ethical Hacker (CEH) exam at Hacker School Lab" style="width:380px;">
+                    </a>                        
+                    <h2 class="course-title">        
+                        <a href="https://www.hackerschool.in/certifications/certified-ethical-hacker-ceh">Certified Ethical Hacker (CEH)</a>            
+                    </h2>                    
+                    <p>Among the Cyber Security Certifications online or classroom programs provided by Hacker School, Certified Ethical Hacker (CEH) Certification ...<a href="https://www.hackerschool.in/certifications/certified-ethical-hacker-ceh" class="text-link">Read More</a></p>                
+            </div>          
+        </div>            
+		<div class="column">						
+            <div class="card">               			
+                <a href="https://www.hackerschool.in/certifications/ec-council-certified-security-analyst-ecsa"><img src="https://www.hackerschool.in/uploads/ECSA.jpg" title="EC-Council Certified Security Analyst (ECSA) Course" alt="Smiley female student after successfully completing EC-Council Certified Security Analyst (ECSA) Exam at Hacker School exam center" style="width: 380px;"></a>                
+                                
+                <h2 class="course-title">
+                <a href="https://www.hackerschool.in/certifications/ec-council-certified-security-analyst-ecsa">EC-Council Certified Security Analyst (ECSA)</a>                            
+                </h2>                                       
+                <p>EC-Council Certified Security Analyst (ECSA) Course adds value to the Information Security Professionals by giving them a practical oriented ...<a href="https://www.hackerschool.in/certifications/ec-council-certified-security-analyst-ecsa" class="text-link">Read More</a></p>             
+                </div>                    
+                </div>                  
+                <div class="column">
+                    <div class="card">       			               		
+                        <a href="https://www.hackerschool.in/certifications/computer-hacking-forensic-investigator-chfi"><img src="https://www.hackerschool.in/uploads/CHFI.jpg" title="Computer Hacking Forensic Investigator (CHFI) Certification" alt="Group of students discussing Computer Hacking Forensic Investigator (CHFI) course at Hacker School Lab" style="width:380px;">       	
+                        </a>     	
+                        <h2 class="course-title">    	
+						<a href="https://www.hackerschool.in/certifications/computer-hacking-forensic-investigator-chfi">Computer Hacking Forensic Investigator (CHFI)</a>
+                        </h2>        
+                        <p>Forensic investigation is the process of gathering evidence through the application of forensic techniques from digital devices to report ...<a href="https://www.hackerschool.in/certifications/computer-hacking-forensic-investigator-chfi" class="text-link">Read More</a></p>            
+                    </div>
+                </div>                                   
+        <div class="column">
+            <div class="card">                    
+                <a href="https://www.hackerschool.in/certifications/licensed-penetration-tester-lpt">                    
+                <img src="https://www.hackerschool.in/uploads/LPT.jpg" title="Licensed Penetration Tester (LPT) Certification" alt="Smiley Female student preparing for Licensed Penetration Tester (LPT) Certification at Hacker School" style="width: 380px;">                           
+                </a>                        
+                                   
+                <h2 class="course-title">                  
+                <a href="https://www.hackerschool.in/certifications/licensed-penetration-tester-lpt">Licensed Penetration Tester (LPT)</a>                  	
+
+                </h2>            	
+                <p>A candidate who wants to enhance their skills in penetration testing can take up the Advanced Penetration Testing (APT) course by EC-Council ...<a href="https://www.hackerschool.in/certifications/licensed-penetration-tester-lpt" class="text-link">Read More</a></p>                
+                                    
+        	</div>
+		</div>
+	</div>                                                  	                  	
+
+
+<div class="row" style="background-color: red;margin:20px ; color: white;font-size: 50px; font-family: Brush Script MT">
+	<div class="column">
+          <center><p style="">9<sup>+</sup><h1>Years in<br>Cyber Security</h1></p></center>                      
+	 </div>
+
+	 <div class="column">
+          <center><p style="">1500<sup>+</sup></p><h1>Certified<br>Professionals</h1></center>                      
+	 </div>
+
+	 <div class="column">
+          <center><p style="">10<sup>+</sup></p><h1>Dedicated<br>Team</h1></center>                      
+	 </div>
+
+	 <div class="column">
+          <center><p style="">5<sup>+</sup></p><h1>EC-Council<br>Awards</h1></center>                      
+	 </div>
+
+</div>
+
+<div class="" style="padding: 20px; font-family:Brush Script MT ">
+	<center>
+		<strong><h1 style="color: red;"><bold>Cyber Security Courses</bold></h1></strong>
+	</center>
+</div>
+
+
+
+
+
+
+<div class="row" style="padding: 30px;">
+<div class="column" style="">
+	<a href="{% url 'one' %}">
+  <img src="{% static 'images/Certified_Ethical_Hacker.jpg' %}" alt="Snow" style="width:500px; height: 250px; border-radius: 30px;">
+</a>
+  
+</div>
+<div class="column" style="margin-left: 160px;">
+  <img src="{% static 'images/df.jpg' %}" alt="Snow" style="width:500px; height: 250px; border-radius: 30px;">
+  
+</div>
+<div class="column" style="margin-left: 160px;">
+  <img src="{% static 'images/pt.jpg' %}" alt="Snow" style="width:500px; height: 250px; border-radius: 30px;">
+  
+</div>
+</div>
+
+
+<div class="row" style="padding: 30px;">
+<div class="column" style="">
+	<a href="">
+  <img src="{% static 'images/2.jpg' %}" alt="Snow" style="width:500px; height: 250px; border-radius: 30px;">
+</a>
+  
+</div>
+<div class="column" style="margin-left: 160px;">
+  <img src="{% static 'images/4.jfif' %}" alt="Snow" style="width:500px; height: 250px; border-radius: 30px;">
+  
+</div>
+<div class="column" style="margin-left: 160px;">
+  <img src="{% static 'images/6.jfif' %}" alt="Snow" style="width:500px; height: 250px; border-radius: 30px;">
+  
+</div>
+</div>
+
+
+<div class="row" style="padding: 30px;">
+<div class="column" style="">
+	<a href="">
+  <img src="{% static 'images/hac.jfif' %}" alt="Snow" style="width:500px; height: 250px; border-radius: 30px;">
+</a>
+  
+</div>
+<div class="column" style="margin-left: 160px;">
+  <img src="{% static 'images/3.png' %}" alt="Snow" style="width:500px; height: 250px; border-radius: 30px;">
+  
+</div>
+<div class="column" style="margin-left: 160px;">
+  <img src="{% static 'images/five.jpg' %}" alt="Snow" style="width:500px; height: 250px; border-radius: 30px;">
+  
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- <div class="card-body">
+	<a class="btn btn-primary" href="{% url 'ceh' %}" >Back</a>
+	<a class="btn btn-primary" href="{% url 'ceh2' %}" style="margin-left: 1070px; ">Next</a> -->
+
+<!-- </div> -->
+
+
+</body>
+<footer>
+	<div style="background: black;"><center><p style="font-color: red;">© 2020 Crazy HackersWorld.com<br> All Rights Reserved.</p>
+</center></div>
+
+
+</footer>
+</html>
+
+{% endblock %}

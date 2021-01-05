@@ -1,0 +1,51 @@
+
+{% extends 'sa/base.html' %}
+{% block title %}ceh{% endblock %}
+{% block content %}
+{% load static %}
+{% load embed_video_tags %}
+
+
+
+
+<div>
+	<center><h2 style="font-family: Brush Script MT">Contents At a Glance</h2>
+	<div style="padding-left: 10px; padding-right: 10px;">
+		<table class="table mt-2 table-hover border-rounded" border="2"  rules="groups" >
+		<COLGROUP align="center">
+		<COLGROUP align="left">
+		<COLGROUP align="center" span="2">
+		<COLGROUP align="center" span="3">			
+			<thead>
+			<tr><th >S.No<th >Concepts<th >Duration
+			
+			<tbody>
+				<tr><td>1</td><td>Getting Started: Essential Knowledge</td><td>10 Hrs</td></tr>
+				<tr><td>2</td><td>Reconnaissance: Information Gathering for the Ethical Hacker</td><td>8 Hrs</td></tr>
+				<tr><td>3</td><td>Scanning and Enumeration</td><td>6 Hrs</td></tr>
+				<tr><td>4</td><td>Sniffing and Evasion</td><td>11 Hrs</td></tr>
+				<tr><td>5</td><td>Attacking a System</td><td>8 Hrs</td></tr>
+				<tr><td>6</td><td>Web-Based Hacking: Servers and Applications</td><td>9 Hrs</td></tr>
+				<tr><td>7</td><td>Wireless Network Hacking</td><td>5 Hrs</td></tr>
+				<tr><td>8</td><td>Mobile Communications and the IoT</td><td>1 Hrs</td></tr>
+				<tr><td>9</td><td>Security in Cloud Computing</td><td>3 Hrs</td></tr>
+				<tr><td>10</td><td>Trojans and Other Attacks</td><td>2 Hrs</td></tr>
+				<tr><td>11</td><td> Cryptography 101</td><td>3 Hrs</td></tr>
+				<tr><td>12</td><td> Low Tech: Social Engineering and Physical Security</td><td>4 Hrs</td></tr>
+				<tr><td>13</td><td>The Pen Test: Putting It All Together</td><td>10 Hrs</td></tr>
+
+
+			</tbody>
+		</table>
+	</div>
+	</center>
+	<div class="card-body" align="right">
+	<a class="btn btn-primary" href="{% url 'ceh0' %}">Next</a>
+</div>
+</div>
+<!-- <div class="card-body" align="right">
+	<a class="btn btn-primary" href="{% url 'one' %}">Next</a>
+</div> -->
+
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'sa/base.html' %}
+{% block title %}ceh{% endblock %}
+{% block content %}
+{% load static %}
+{% load embed_video_tags %}
+
+<div align="right" style="padding-top: 10px;padding-right: 10px;">
+	<span class="black" style=" 
+    background-color: #231F20;
+    color: #FFF;
+    padding: .1em 2em .1em 4em;"><small>CHAPTER</small> <span class="size" style="color: #C6C8CA;
+    font-size: 400%;
+    vertical-align: middle;">1</span></span>
+</div>
+<div style="padding-left: 10px;margin-top: 3em;
+    margin-bottom: 2.5em;
+    border-top: double .3em;
+    border-bottom: double .3em;
+    padding-top: .3em;
+    padding-bottom: .5em;
+    padding-left: .5em; font-family: Brush Script MT">
+	<center><h2>Getting Started: Essential Knowledge</h2></center>
+	<h4>In this chapter, you will</h4>
+	<ul>
+	<li>   Identify components of TCP/IP computer networking<br></li>
+	<li>Understand basic elements of information security
+	<li> Understand incident management steps</li>
+	<li> Identify fundamentals of security policies</li>
+	<li>  Identify essential terminology associated with ethical hacking</li>
+	<li>Define ethical hacker and classifications of hackers</li>
+	<li> Describe the five stages of ethical hacking</li>
+	<li> Define the types of system attacks</li>
+	<li> Identify laws, acts, and standards affecting IT security</li>
+
+	</ul>
+
+</div>
+
+<div class="container col-md-10" style="padding-left: 10px;margin-top: 3em; font-family: Brush Script MT;">
+	<strong><p  style="color: red;" >After battling with everything for a while and narrowing down the culprit, I called the handy help desk line to get a new router ordered and delivered for me to install myself, or to get a friendly in-home visit to take the old one and replace it. After answering the phone and taking a couple basic, and perfectly reasonable, pieces of information, the friendly help desk employee started asking me what I considered to be ridiculous questions: “<em>Is your power on? Is your computer connected via a cable or wireless? Is your wireless card activated, because sometimes those things get turned off in airplane mode?”</em> And so on. I played along nicely for a little while. I mean, look, I get it: they <em>have</em> to ask those questions. But after 10 or 15 minutes of dealing with it I lost patience and just told the guy what was wrong. He paused, thanked me, and continued reading the scroll of questions no doubt rolling across his screen from the “Customer Says No Internet” file.</p>
+
+	<p style="color: brown;">After battling with everything for a while and narrowing down the culprit, I called the handy help desk line to get a new router ordered and delivered for me to install myself, or to get a friendly in-home visit to take the old one and replace it. After answering the phone and taking a couple basic, and perfectly reasonable, pieces of information, the friendly help desk employee started asking me what I considered to be ridiculous questions: “<em>Is your power on? Is your computer connected via a cable or wireless? Is your wireless card activated, because sometimes those things get turned off in airplane mode?”</em> And so on. I played along nicely for a little while. I mean, look, I get it: they <em>have</em> to ask those questions. But after 10 or 15 minutes of dealing with it I lost patience and just told the guy what was wrong. He paused, thanked me, and continued reading the scroll of questions no doubt rolling across his screen from the “Customer Says No Internet” file.</p>
+
+
+	<p  style="color: green;">I survived the gauntlet and finally got a new router ordered, which was delivered the very next day at 8:30 in the morning. Everything finally worked out, but the whole <span id="page_2" epub:type="pagebreak"></span>experience came to mind as I sat down to start the latest version of this book. I got to looking at the previous chapters and thought to myself, “What were you thinking? Why were you telling them about networking and the OSI model? <em>You’re</em> the help desk guy here.”</p>
+
+
+	<bold><p  style="color: red;" >Why? Because I have to. I’ve promised to cover everything here, and although you shouldn’t jump into study material for the exam without already knowing the basics, we’re all human and some of us will. But don’t worry, dear reader: this edition has hopefully cut down some of the basic networking goodies from past versions. I did have to include a fantastic explanation of the OSI reference model, what PDUs are at what level, and why you should care, even though I’m pretty sure you know this already. I’m going to do my best to keep it better focused for you and your study. This chapter still includes some inanely boring and mundane information that is probably as exciting as that laundry you have piled up waiting to go into the machine, but it has to be said, and you’re the one to hear it. We’ll cover the many terms you’ll need to know, including what an <em>ethical hacker</em> is supposed to be, and maybe even cover a couple things you don’t know.</p></strong>
+
+
+
+		<div class="card-body">
+	<a class="btn btn-primary" href="{% url 'ceh' %}" >Back</a>
+	<a class="btn btn-primary" href="{% url 'ceh1' %}" style="margin-left: 90%; ">Next</a>
+
+</div>
+</div>
+
+
+
+
+
+{% endblock %}

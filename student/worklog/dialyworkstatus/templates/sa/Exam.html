@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Online Exam</title>
+</head>
+<body>
+	<h1>Chapter 1</h1>
+	<div style="padding-left: 30px;">
+		{% for results in Exam %}
+		<table>
+			<tr>
+				<td>
+					{{result.id}} ) {{result.Question}}
+				</td>
+			</tr>
+			<tr>
+				<td><input type="radio" id="Option1" name="{{result.id}}" value="{{result.Option1}}">{{result.Option1}}</td>
+			</tr>
+
+			<tr>
+				<td><input type="radio" id="Option2" name="{{result.id}}" value="{{result.Option2}}">{{result.Option2}}</td>
+			</tr>
+
+			<tr>
+				<td><input type="radio" id="Option3" name="{{result.id}}" value="{{result.Option3}}">{{result.Option3}}</td>
+			</tr>
+
+			<tr>
+				<td><input type="radio" id="Option4" name="{{result.id}}" value="{{result.Option4}}">{{result.Option4}}</td>
+			</tr>
+
+			<tr>
+				<td><label id="Corrans"></label>{{result.Corrans}}</td>
+			</tr>
+
+
+		</table>
+	
+	{% endfor %}
+
+	<hr>
+	<input type="submit" value="Click For Results" id="but1">
+	</div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+{% extends 'sa/base.html' %}
+{% block title %}ceh{% endblock %}
+{% block content %}
+{% load static %}
+{% load embed_video_tags %}
+
+<div align="right" style="padding-top: 10px;padding-right: 10px;">
+	<span class="black" style=" 
+    background-color: #231F20;
+    color: #FFF;
+    padding: .5em 2em .2em 4em;"><bold>CHAPTER</bold> <span class="size" style="color: #C6C8CA;
+    font-size: 400%;
+    vertical-align: middle;">1</span></span>
+</div>
+<div class="container col-md-10"  style="padding-left: 10px;margin-top: 3em; font-family: Brush Script MT">
+	<strong>
+
+	<h4 class="h4" id="lev1sec2"><strong>Security Basics</strong></h4>
+	
+		<p class="noindent">If there were a subtitle to this section, I would have called it “Ceaseless Definition Terms Necessary for Only a Few Questions on the Exam.” There are tons of these, and I gave serious thought to skipping them all and just leaving you to the glossary. However, because I’m in a good mood and, you know, I promised my publisher I’d cover <em>everything,</em> I’ll give it a shot here. And, at least for some of these, I’ll try to do so using contextual clues in a story.</p>
+
+		<p class="indent">Bob and Joe used to be friends in college, but had a falling out over doughnuts. Bob insisted Krispy Kreme’s were better, but Joe was a Dunkin’ fan, and after much yelling and tossing of fried dough they became mortal enemies. After graduation they went their separate ways exploring opportunities as they presented themselves. Eventually Bob became Security Guy Bob, in charge of security for Orca Pig (OP) Industries, Inc., while Joe made some bad choices and went on to become Hacker Joe.</p>
+
+		<p class="indent">After starting, Bob noticed most decisions at OP were made in favor of usability over functionality and security. He showed a <em>Security, Functionality, and Usability triangle</em> (see <a href="ch1.xhtml#ch1fig5">Figure 1-5</a>) to upper management, visually displaying that moving toward one of the three lessened the other two, and security was sure to suffer long term. Management noted Bob’s concerns and summarily dismissed them as irrational, as budgets were tight and business was good.</p>
+
+		<center><p class="fimage" id="ch1fig5"><img src="{% static 'images/F01-05.jpg' %}" alt="Images" width="389" height="250" data-mfp-src="/library/view/ceh-certified-ethical/9781260454567/F01-05.jpg"></p></center>
+
+
+		<p class="figcap"><strong>Figure 1-5</strong> The Security, Functionality, and Usability triangle</p>
+
+		<p class="indent">One day a few weeks later, Hacker Joe woke up and decided he wanted to be naughty. He went out searching for a target of <em>hack value,</em> so he wouldn’t waste time on something that didn’t matter. In doing so, he found OP, Inc., and smiled when he saw Bob’s face on the company directory. He searched and found a target, researching to see if it had any weaknesses, such as software flaws or logic design errors. A particular <em>vulnerability</em> did show up on the target, so Joe researched attack vectors and discovered—through his super-secret hacking background contacts—an attack the developer of some software on the target apparently didn’t even know about since they hadn’t released any kind <span id="page_15" epub:type="pagebreak"></span>of security patch or fix to address the problem. This <em>zero-day attack</em> vector required a specific piece of exploit code he could inject through a hacking tactic he thought would work. After obfuscating this <em>payload</em> and embedding it in an attack, he started.</p>
+
+		<p class="indent">After pulling off the successful <em>exploit</em> and owning the box, Joe explored what additional access the machine could grant him. He discovered other targets and vulnerabilities, and successfully configured access to all. His <em>daisy-chaining</em> of network access then gave him options to set up several machines on multiple networks he could control remotely to execute really whatever he wanted. These <em>bots</em> could be accessed any time he wanted, so Joe decided to prep for more carnage. He also searched publicly available databases and social media for personally identifiable information (PII) about Bob and then posted his findings. After this <em>doxing</em> effort, Joe took a nap, dreaming about what embarrassment Bob would have rain down on him the next day.</p>
+
+		<div class="sidebarn" style="margin-top: 1em;
+    margin-bottom: 1em;
+    border-top: solid .1em;">
+<p class="notei"><img class="inline" src="{% static 'images/note.jpg' %}" alt="Images" width="87" height="69" data-mfp-src="/library/view/ceh-certified-ethical/9781260454567/extip.jpg"></p>
+<p class="note" >
+<p class="note"style="background-color: #D2C8C6; border-radius: 5px; padding-left: 5px;"><strong>EXAM TIP</strong>&nbsp;&nbsp;&nbsp;&nbsp;Another fantastic bit of terminology from ECC-land you may see is “threat modeling.” It’s exactly what it sounds like and consists of five sections: Identify Security Objectives, Application Overview, Decompose Application, Identify Threats, and Identify Vulnerabilities.</p>
+</div>
+
+		<p class="indent">After discovering PII posts about himself, Bob worries that something is amiss, and wonders if his old nemesis is back and on the attack. He does some digging and discovers Joe’s attack from the previous evening, and immediately engages his <em>incident response team (IRT)</em> to identify, analyze, prioritize, and resolve the incident. The team first reviews detection and quickly analyzes the exploitation, in order to notify the appropriate stakeholders. The team then works to contain the exploitation, eradicate residual back doors and such, and coordinate recovery for any lost data or services. After following this <em>incident management</em> process, the team provides post-incident reporting and lessons learned to management.</p>
+
+		<div class="sidebarn" style="margin-top: 1em;
+    margin-bottom: 1em;
+    border-top: solid .1em;">
+<p class="notei"><img class="inline" src="{% static 'images/note.jpg' %}" alt="Images" width="87" height="69" data-mfp-src="/library/view/ceh-certified-ethical/9781260454567/extip.jpg"></p>
+<p class="note" >
+<p class="note"style="background-color: #D2C8C6; border-radius: 5px; padding-left: 5px;"><strong>NOTE</strong>&nbsp;&nbsp;&nbsp;&nbsp;Here’s a great three-dollar term you might see on the exam: EISA. Enterprise Information Security Architecture is a collection of requirements and processes that help determine how an organization’s information systems are built and how they work.</p>
+</div>
+
+		<p class="indent">Post-incident reporting suggested to leadership they focus more attention on security, and, in one section of the report in particular, that they adopt the means to identify what risks are present and quantify them on a measurement scale. This <em>risk management</em> approach would allow them to come up with solutions to mitigate, eliminate, or accept the identified risks (see <a href="ch1.xhtml#ch1fig6">Figure 1-6</a> for a sample risk analysis matrix).</p>
+
+		<p class="fimage" id="ch1fig6"><img src="{% static 'images/F01-06.jpg' %}" alt="Images" width="323" height="325" data-mfp-src="/library/view/ceh-certified-ethical/9781260454567/F01-06.jpg"></p>
+
+		<p class="figcap"><strong>Figure 1-6</strong> Risk analysis matrix</p>
+
+		<div class="sidebarn" style="margin-top: 1em;
+    margin-bottom: 1em;
+    border-top: solid .1em;">
+<p class="notei"><img class="inline" src="{% static 'images/note.jpg' %}" alt="Images" width="87" height="69" data-mfp-src="/library/view/ceh-certified-ethical/9781260454567/extip.jpg"></p>
+<p class="note" >
+<p class="note"style="background-color: #D2C8C6; border-radius: 5px; padding-left: 5px;"><strong>EXAM TIP</strong>&nbsp;&nbsp;&nbsp;&nbsp;The risk management phases identified by EC-Council are Risk Identification, Risk Assessment, Risk Treatment, Risk Tracking, and Risk Review. Each phase is fairly self-explanatory, and you may see mention of them on your exam.</p>
+</div>
+
+		<p class="indent"><span id="page_16" epub:type="pagebreak"></span>Identifying organizational <em>assets,</em> the <em>threats</em> to those assets, and their <em>vulnerabilities</em> would allow the company to explore which countermeasures security personnel could put into place to minimize risks as much as possible. These <em>security controls</em> would then greatly increase the security posture of the systems.</p>
+
+		<div class="sidebarn" style="margin-top: 1em;
+    margin-bottom: 1em;
+    border-top: solid .1em;">
+<p class="notei"><img class="inline" src="{% static 'images/note.jpg' %}" alt="Images" width="87" height="69" data-mfp-src="/library/view/ceh-certified-ethical/9781260454567/extip.jpg"></p>
+<p class="note" >
+<p class="note"style="background-color: #D2C8C6; border-radius: 5px; padding-left: 5px;"><strong>NOTE</strong>&nbsp;&nbsp;&nbsp;&nbsp;Security controls can also be categorized as physical, technical, and administrative. Physical controls include things such as guards, lights, and cameras. Technical controls include things such as encryption, smartcards, and access control lists. Administrative controls include the training, awareness, and policy efforts that are well intentioned, comprehensive, and well thought out—and that most employees ignore. Hackers will combat physical and technical controls to get to their end goal, but they don’t give a rip about your administrative password policy—unless it’s actually followed.</p>
+</div>
+
+
+
+
+<div class="card-body">
+	<a class="btn btn-primary" href="{% url 'ceh6' %}" >Back</a>
+	<a class="btn btn-primary" href="{% url 'ceh8' %}" style="margin-left: 90%; ">Next</a>
+
+</div>
+</strong>
+
+
+
+</div>
+{% endblock %}

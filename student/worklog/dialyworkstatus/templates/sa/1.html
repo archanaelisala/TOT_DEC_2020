@@ -1,0 +1,101 @@
+{% extends 'sa/base.html' %}
+{% block title %}one{% endblock %}
+{% block content %}
+{% load static %}
+{% load embed_video_tags %}
+
+<div class="center">
+
+<!-- loading="lazy" frameborder="0" allowfullscreen height="345px" width="420px"title="CERTIFIED ETHICAL HACKING and PENETRATION TESTING Free Courses with Free Certificates - Cybrary"align="center"></iframe> -->
+<h1 style="padding-bottom: 20px;">CERTIFIED ETHICAL HACKING and PENETRATION TESTING Free Courses with Free Certificates - Cybrary</h1>
+</div>
+<div class="" style="padding: 20px;">
+<div>
+<video width="100%" height="500" controls="controls">
+  <source src="{% static 'videos/Certified%20Ethical%20Hacker%20(CEH)%20v10.mp4' %}" type="video/mp4">
+  <source src="{% static 'videos/Certified%20Ethical%20Hacker%20(CEH)%20v10.ogg' %}" type="video/ogg">
+</video>
+</div>
+
+
+<!-- <div class="embed-responsive embed-responsive-21by9">
+  <iframe class="embed-responsive-item" >{% for i in videos %}
+  {% video i.video %}  -->
+<!-- {% video i.video "300x200" %}
+{% endfor %}</iframe>
+</div> --> 
+
+<div style=" position:fixed; 
+  align-items: right;
+  top: 0;
+  " class="lg-21 md-21">
+   {% if not user.is_authenticated %}
+	
+<a class="btn btn-primary" href="{% url 'register' %}" align="right">Register</a>
+ {% endif %}
+</div>
+
+</p>
+<img src="{% static 'images/Certified_Ethical_Hacker.jpg' %}"><br>
+<h2>Mode Of Training:</h3>
+<ul>
+	<li>classroom training</li>
+	<li>online training</li>
+</ul><br>
+<h2>Course Prerequisites:</h2>
+<ul><li>CEH Certification doesn't require any prerequisite however having knowledge about Networking Basics will be an additional advantage to understand the concepts easily</li></ul>
+<h2>Course Overview:</h2>
+<br>
+<p>Among the Cyber Security Certifications online or classroom programs provided by Hacker School, Certified Ethical Hacker (CEH) Certification is the most comprehensive course for network security professionals. This globally acceptable certification authenticates the applied knowledge of the network administrators, auditors and professionals from a security perspective. Since this course contents are vendor-neutral, it covers a wide range of network-security concepts. This training will help you to think from the malicious hackers viewpoint but try to penetrate the network, ethically and list out the loopholes and vulnerabilities. This certification speaks for the professionalism and assures your employer of the ethics related to the security domain.<br><br>
+
+The CEH Certification Course will teach the students about hacking from an entirely practical stand-point following the principle of ‘Learning by Doing’. In this course you will be performing all the steps right from scanning and identifying vulnerable targets and gaining access to those systems and suggesting the remedies. The practical approach gives the student an in-depth knowledge about the hacking tools and techniques. The simulated lab environment will demonstrate how actual hackers penetrate through the multi-level defenses of the organization. This course additionally teaches you about the virus creation, DDoS attacks, Intrusion Detection techniques and Social Engineering,  apart from the steps of hacking.<br><br>
+
+An Ethical Hacker closely resembles a Penetration Tester. Companies generally employ an ethical hacker to test their network strength or website vulnerability with the written permission from the organization. We try to emulate the attacking techniques of a malicious hacker and check for the flaws in the network. Apart from locating the flaws, he even tries to exploit those vulnerabilities to check the network strength and suggest preventive measures accordingly. In most of the countries, Hacking or unauthorized access of any network/system is perceived as an act of crime. Hence when companies allow an Ethical Hacker to penetrate their system/network, they do so by providing a contract to the employee. In this case, it is accepted as legal hacking. The crux is that an Ethical Hacker has authorization to probe the network/systems.
+
+</p>
+<br>
+<h2>Course Modules:</h2>
+<ul>
+	<li>Introduction to Ethical Hacking</li>
+	<li>Footprinting and Reconnaissance</li>
+	<li>Scanning Networks</li>
+	<li>Enumeration</li>
+	<li>Vulnerability Analysis</li>
+	<li>System Hacking</li>
+	<li>Malware Threats</li>
+	<li>Sniffing</li>
+	<li>Social Engineering</li>
+</ul><br>
+<h2>Price:</h2><br>
+<p>
+	CEH Certification Cost: 34,000/- INR
+
+** Note:
+
+- To Avail Special Discount kindly -<a href="">Contact Us </a> <br>
+
+- For Free Online Demo please -<a href="">Contact Us</a> 
+</p>
+<br>
+<h2>Course Duration:</h2>
+<br>
+<p>70 - 80 Hours</p>
+</div>
+
+
+<div class="card-body">
+	<!-- <a class="btn btn-primary" href="{% url 'ceh0' %}" >Back</a> -->
+	<a class="btn btn-primary" href="{% url 'ceh' %}" style="margin-left: 90%; ">Move to Subject</a>
+
+</div>
+
+<footer>
+	<div style="background: black;"><center><p style="font-color: red;">© 2020 Crazy HackersWorld.com<br> All Rights Reserved.</p>
+</center></div>
+
+
+</footer>
+
+
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'sa/base.html' %}
+{% block title %}home{% endblock %}
+{% block content %}
+{% load static %}
+<div class="container">
+ <!-- <div class="jumbotron col-md-15 ml-auto"> -->
+   <!-- <center><h1>home</h1></center> -->
+   <div>
+   	<!-- {{table.as_table}} -->
+   <table >
+   <tr><td>
+   	<a class="btn btn-light" href="{% url 'one' %}"><img src="{% static 'images/1.jfif' %}"style="height: 270px;width: 270px;border-spacing: 15px;padding: 10px;padding-left: -30px;border-radius: 10px;"><br>Certified Ethical Hacking Certification.</td></a>
+	<td><a class="btn btn-light" href="two"><img src="{% static 'images/2.jpg' %}" style="height: 270px;width: 270px;border-spacing: 15px;padding: 10px;"><br>GIAC Penetration Tester.</td></a>
+	<td><a class="btn btn-light" href="three"><img src="{% static 'images/3.png' %}"style="height: 250px;width: 270px;border-spacing: 15px;padding-bottom:10px;"><br>Offensive Security Certified Professional.</td></a>
+	<td><a class="btn btn-light" href="four"><img src="{% static 'images/4.jfif' %}"style="height: 270px;width: 270px;border-spacing: 15px;padding: 10px;"><br>CREST.</td></a>
+    </tr>
+    <tr>
+    	<td><a class="btn btn-light" href="five"><img src="{% static 'images/5.jfif' %}"style="height: 270px;width: 270px;border-spacing: 15px;padding: 10px;"><br>Foundstone Ultimate Hacking.</td></a>
+    	<td><a class="btn btn-light" href="six"><img src="{% static 'images/6.jfif' %}"style="height: 270px;width: 270px;border-spacing: 15px;padding: 10px;"><br>Certified Penetration Testing Consultant.</td></a>
+    	<td><a class="btn btn-light" href="seven"><img src="{% static 'images/7.png' %}"style="height: 270px;width: 270px;border-spacing: 15px;padding: 10px;"><br>Certified Penetration Testing Engineer.</td></a>
+    	<td><a class="btn btn-light" href="eight"><img src="{% static 'images/mac.png' %}"style="height: 270px;width: 270px;border-spacing: 15px;padding: 10px;"><br>Ethical hacking course for Beginers.</td></a>
+
+    </tr>
+	</table>
+    </div>
+ </div>
+</div>
+<footer>
+	<div style="background: black;"><center><p style="font-color: red;">© 2020 Crazy HackersWorld.com<br> All Rights Reserved.</p>
+</center></div>
+</footer>
+{% endblock %}
+
+

@@ -1,0 +1,12 @@
+{% extends 'DtlApp/base.html' %}
+{% block titile %} Logout {% endblock %}
+{% block content %}
+<div class="container">
+    <div class="card col-md-6 mt-3">
+        <h2 class="bg-dark text-center text-white border rounded">Logged Out</h2>
+        <h3>
+            Are you sure you want to Login again 
+        </h3><a href="{% url 'login' %}">Login</a>
+    </div>
+</div>
+{% endblock %}

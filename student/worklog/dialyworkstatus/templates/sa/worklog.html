@@ -1,0 +1,31 @@
+{% extends 'sa/base.html' %}
+{% load static %}
+{% block title %} Assignments {% endblock %}
+{% block content %}
+<div class="container mt-3">
+	<div class="card col-md-7 mx-auto mt-2">
+		<h2 class="bg-warning text-white text-center mx-2 my-2 p-2 border-rounded">Enter WorkLog</h2>
+		<div class="card-body">
+			<a href="{% url 'crw' %}" class="btn btn-success btn-sm p-2" style="float:right">Add Worklog</a>
+			<table class="table mt-2 table-hover border-rounded">
+				<tr class="bg-dark text-white">
+					<th>Sno</th>
+					<th>Date</th>
+					<th>Description</th>
+					<th>Status</th>
+					<th>Action</th>
+				</tr>
+				{% for m in y %}
+				<tr>
+					<td>{{forloop.counter}}</td>
+					<td>{{m.date}}</td>
+					<td>{{m.description}}</td>
+					<td>{{m.wks}}</td>
+					<td><a href="#" class="btn-danger btn">Delete</a></td>
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+</div>
+{% endblock %}

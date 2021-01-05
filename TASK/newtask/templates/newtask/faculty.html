@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>student register page</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'images/logo.png' %}">
+	 <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	 <script type="text/javascript" src="{% static 'jquery/sample.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+	<div class="container col-md-5">
+		<div class="card mt-5">
+			<form action="#" method="POST">
+				{% csrf_token %}
+				<h3 class="text-center border-rounded p-2 bg-info">Welcome to Faculty Registration page</h3>
+				<div class="card-body">
+					<div class="form-group">
+						<label for="Faculty Name">Faculty Name</label>
+						<input type="text" name="fname" placeholder="Enter your Name" class="form-control" required>
+					</div>
+					<div class="form-group">
+						<label for="Faculty Id">Faculty Id</label>
+						<input type="text" name="fid" placeholder="Enter your Id" class="form-control" required>
+					</div>
+					<div class="form-group">
+						<label for="Email">Email</label>
+						<input type="email" name="femail" placeholder="Enter Email Id" class="form-control" required>
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input type="password" name="fpassword" placeholder="Enter password" class="form-control" required>
+					</div>
+					<div class="form-group">
+						<label for="collegename">College Name</label>
+						<input type="text" name="fcollegename" placeholder="Enter collegename" class="form-control" required>
+					</div>
+					<div class="form-group">
+						<label>Branch</label>
+						<input type="text" name="fbranch" placeholder="Enter Branch" class="form-control" required>
+					</div>
+					<div class="form-group">
+						<label for="number">Mobile</label>
+						<input type="number" name="fmobile" placeholder="Enter Mobile no" class="form-control" required>
+					</div>
+					<!-- <div class="form-group">
+						<label for="number">Salary</label>
+						<input type="number" name="fsal" placeholder="Enter Salary" class="form-control" required>
+					</div> -->
+				</div>
+				<div class="card-footer btn-info">
+					<input type="submit" name="Register" class="btn btn-info" class="form-control">
+					
+				</div>
+        </form>
+
+			
+		</div>
+	
+		
+	</div>
+
+</body>
+</html>

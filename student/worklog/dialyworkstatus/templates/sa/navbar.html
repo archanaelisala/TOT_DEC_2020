@@ -1,0 +1,85 @@
+{% load static %}
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark" >
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="{% url 'cehm' %}">
+    <img src="{% static 'images/images1.png' %}" alt="logo" style="width:100px;border-radius: 15px;">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+  <!-- Links -->
+  <ul class="navbar-nav">
+    {% if not user.is_authenticated %}
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'cehm' %}">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'aboutUs' %}">AboutUs</a>
+    </li>
+    <li class="dropdown">
+      <a class="nav-link" href="{% url 'contact' %}">Contact
+        <ul class="dropdown-menu">
+          <li><a href="mailto:mattinarendra222@gmail.com">Crazy HackersWorld.in</a></li>
+
+        </ul>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'register' %}"></a>
+    </li>
+    {% else %}
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'one' %}">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'aboutUs' %}">AboutUs</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+    </li>
+     <li class="nav-item">
+      <a class="nav-link" href="{% url 'wk' %}">Assignments</a>
+    </li>
+    <!-- <li class="nav-item">
+      <a class="nav-link" href="#">Mail</a>
+    </li> -->
+    {% endif %}
+  </ul>
+  <ul class="navbar-nav ml-auto" style="margin-right:90px">
+    {% if not user.is_authenticated %}
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'login' %}">Login</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'search' %}">
+        <i class="fa fa-search" aria-hidden="true" style="font-size: 30px;"></i>
+
+        <!-- <img src="{% static 'images/search1.png'%}" style="height: 25px; width: 20px;"> -->
+
+      </a>
+    </li>
+    {% else %}
+    <li class="nav-item dropdown">
+      <li class="nav-item">
+      <a class="nav-link" href="{% url 'search' %}">
+        <i class="fa fa-search" aria-hidden="true" style="font-size: 30px;"></i>
+       <!--  <img src="{% static 'images/search1.png'%}" style="height: 25px; width: 20px;"> -->
+      </a>
+    </li>
+      <a  href="{% url 'search' %}"
+         class="nav-link dropdown-toggle" data-toggle="dropdown">
+        <img  src="{{user.impfle.im.url}}" style="height: 30px;width: 30px; border-radius: 15px;">
+      Hi Welcome {{user.username}}</a>
+      <ul class="dropdown-menu dropdown-item-hover" style="margin-left: 83%;">
+      <li><a class="dropdown-item" href="{% url 'Profile' %}">Profile</a>
+      <li><a class="dropdown-item" href="{% url 'password_change' %}">Change Password</a>
+      <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+      </ul></div>
+    
+    {% endif %}
+  </ul>
+</div>
+</nav>

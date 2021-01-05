@@ -1,0 +1,88 @@
+{% extends 'sa/base.html' %}
+{% block title %}ceh{% endblock %}
+{% block content %}
+{% load static %}
+{% load embed_video_tags %}
+
+<div align="right" style="padding-top: 10px;padding-right: 10px;">
+	<span class="black" style=" 
+    background-color: #231F20;
+    color: #FFF;
+    padding: .5em 2em .2em 4em;"><bold>CHAPTER</bold> <span class="size" style="color: #C6C8CA;
+    font-size: 400%;
+    vertical-align: middle;">1</span></span>
+</div>
+<div class="container col-md-10"  style="padding-left: 10px;margin-top: 3em; font-family: Brush Script MT">
+	<strong>
+
+		<h4 class="h4"><strong><u>Vulnerabilities</u></h4>
+
+		<p class="noindent">I struggled with just where, when, and how to add a discussion on vulnerabilities in this book we’re putting together and finally landed on here as the best place. Why? Because this is bedrock, 101-type information that many in security just <em>assume</em> you already know. I know it seems easy enough, and you can find vast resources out there to help educate yourself quickly, but it seems to me if nobody actually shows or tells you the hows and whys on something, how can you be expected to just know it?</p>
+
+		<p class="indent">In our romp through “<em>things you’re already supposed to know</em>,” we need to spend a few cursory moments on what, exactly, defines a vulnerability and a few basics on vulnerabilities in particular. A vulnerability is simply a weakness that can be exploited by an attacker to perform unauthorized actions within a computer or network system. Since our job as security professionals is to keep our systems safe, and your job as a pen tester is to point out the weaknesses in security design, it follows that we should all know vulnerability management well and do our best at keeping vulnerabilities to a minimum.</p>
+
+		<p class="indent">So how does one know what vulnerabilities are out there and what dangers they might provide? And is there a ranking system of sorts to determine which vulnerabilities are more dangerous than others? Glad you asked. First, if you’re looking for lists of vulnerabilities and resources on them, try a few of the following links to get you started (there are plenty others; these are just a few of the ones available):</p>
+
+		<p class="bullt">•&nbsp;&nbsp;&nbsp;Microsoft Vulnerability Research (<a href="http://technet.microsoft.com">technet.microsoft.com</a>)</p>
+
+		<p class="bull">•&nbsp;&nbsp;&nbsp;Security Focus (<a href="http://www.securityfocus.com">www.securityfocus.com</a>)</p>
+
+		<p class="bull">•&nbsp;&nbsp;&nbsp;Hackerstorm (<a href="http://www.hackerstorm.co.uk">www.hackerstorm.co.uk</a>)</p>
+
+		<p class="bull">•&nbsp;&nbsp;&nbsp;Exploit Database (<a href="http://www.exploit-db.com">www.exploit-db.com</a>)</p>
+
+		<p class="bull">•&nbsp;&nbsp;&nbsp;Security Magazine (<a href="http://www.securitymagazine.com">www.securitymagazine.com</a>)</p>
+
+		<p class="bull">•&nbsp;&nbsp;&nbsp;Trend Micro (<a href="http://www.trendmicro.com">www.trendmicro.com</a>)</p>
+
+		<p class="bullb">•&nbsp;&nbsp;&nbsp;Dark Reading (<a href="http://www.darkreading.com">www.darkreading.com</a>)</p>
+
+		<p class="indent">Next, if you’re looking for ways to quantify the danger or risk particular vulnerabilities have, try the Common Vulnerability Scoring System (CVSS, <a href="https://www.first.org/cvss/">https://www.first.org/cvss/</a>), which is “a published standard used by organizations worldwide” and “provides a way to capture the principal characteristics of a vulnerability and produce a numerical score reflecting its severity. The numerical score can then be translated into a qualitative representation (such as low, medium, high, and critical) to help organizations properly assess and prioritize their vulnerability management processes.” Want more? How about the National Vulnerability Database (NVD, <a href="https://nvd.nist.gov/vuln-metrics/cvss">https://nvd.nist.gov/vuln-metrics/cvss</a>), <span id="page_13" epub:type="pagebreak"></span>the “U.S. government repository of standards based vulnerability management data represented using the Security Content Automation Protocol (SCAP). This data enables automation of vulnerability management, security measurement, and compliance.”</p>
+
+		<p class="indent">As a pen tester, you need to remain as up to date on active vulnerabilities as possible (knowledge of new ones pop up all the time). ECC drops all vulnerabilities into a series of categories, and they are for the most part self-explanatory:</p>
+
+		<p class="bullt">•&nbsp;&nbsp;&nbsp;<strong>Misconfiguration</strong> A misconfiguration of the service or application settings.</p>
+
+		<p class="bull">•&nbsp;&nbsp;&nbsp;<strong>Default Installations</strong> Sometimes the installation of an application or service using default locations and settings opens a vulnerability (sometimes discovered well after the release of the application or service).</p>
+
+		<p class="bull">•&nbsp;&nbsp;&nbsp;<strong>Buffer Overflows</strong> Covered later in this book, buffer overflows are flaws in execution allowing an attacker to take advantage of bad coding.</p>
+
+		<p class="bull">•&nbsp;&nbsp;&nbsp;<strong>Missing Patches (Unpatched Servers)</strong> Despite patching for a known security flaw being available, many systems are not patched for a variety of reasons, leaving them vulnerable to attack.</p>
+
+		<p class="bull">•&nbsp;&nbsp;&nbsp;<strong>Design Flaws</strong> These are flaws universal to <em>all</em> operating systems—things like encryption, data validation, logic flaws, and so on.</p>
+
+		<p class="bull">•&nbsp;&nbsp;&nbsp;<strong>Operating System Flaws</strong> These are flaws in a specific OS (Windows versus Linux, and so on).</p>
+
+		<p class="bull">•&nbsp;&nbsp;&nbsp;<strong>Application Flaws</strong> Flaws inherit to the application coding and function itself.</p>
+
+		<p class="bull">•&nbsp;&nbsp;&nbsp;<strong>Open Services</strong> Services that are not actively used on the system but remain open anyway (usually due to negligence or ignorance) can be targets.</p>
+
+		<p class="bullb">•&nbsp;&nbsp;&nbsp;<strong>Default Passwords</strong> Leaving a default password in place on a system is asking for trouble.</p>
+
+		<p class="indent">Lastly, just because a vulnerability exists doesn’t necessarily mean your system is at huge risk. For example, my computer sitting right here in my home office is vulnerable to bear attack: there is, literally, no way it could survive a mauling by a grizzly bear. But what are the odds a bear is gonna come through my front door and, maybe enraged by the red LED stripes across the front and back, attack the system? And what are the odds that, even if the bear came into the house, I wouldn’t blast it with my 357 Magnum sidearm, preventing the attack in the first place?</p>
+
+		<p class="indent">Sure it’s a ridiculous example, but it proves a point: vulnerabilities are <em>always</em> present on your system, and your job as a security professional is to put as many security controls as realistically possible in place to prevent their exploitation. Vulnerability and risk assessments are designed specifically to look at potential vulnerabilities on your system versus the actual likelihood of their exploitation. How hard would it be to exploit the vulnerability? Is it even possible for an attacker given the security controls put into place? While we’re on that subject, what are those security controls and how do they work in preventing access or exploitation? All of these are questions auditors and security folks deal with on a daily basis. Start with a solid baseline of your system, a full and complete inventory of what you have and what those systems are vulnerable to, then plan and act accordingly.</p>
+
+		<div class="sidebarn" style="margin-top: 1em;
+    margin-bottom: 1em;
+    border-top: solid .1em;">
+<p class="notei"><img class="inline" src="{% static 'images/note.jpg' %}" alt="Images" width="87" height="69" data-mfp-src="/library/view/ceh-certified-ethical/9781260454567/extip.jpg"></p>
+<p class="note" >
+<p class="note"style="background-color: #D2C8C6; border-radius: 5px; padding-left: 5px;"><strong>NOTE</strong>&nbsp;&nbsp;&nbsp;&nbsp;Vulnerability management tools, as listed and defined by ECC, include but are not limited to Nessus (<a href="http://www.tenable.com">www.tenable.com</a>), Qualys (<a href="http://www.qualys.com">www.qualys.com</a>), GFI Languard (<a href="http://www.gfi.com">www.gfi.com</a>), Nikto (<a href="https://cirt.net">https://cirt.net</a>), OpenVAS (<a href="http://www.openvas.org">www.openvas.org</a>), and Retina CS (<a href="http://www.beyondtrust.com">www.beyondtrust.com</a>).</p>
+</div>
+
+
+
+
+
+<div class="card-body">
+	<a class="btn btn-primary" href="{% url 'ceh5' %}" >Back</a>
+	<a class="btn btn-primary" href="{% url 'ceh7' %}" style="margin-left: 90%; ">Next</a>
+
+</div>
+</strong>
+
+
+
+</div>
+{% endblock %}

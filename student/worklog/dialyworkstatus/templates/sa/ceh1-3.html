@@ -1,0 +1,74 @@
+{% extends 'sa/base.html' %}
+{% block title %}ceh{% endblock %}
+{% block content %}
+{% load static %}
+{% load embed_video_tags %}
+
+<div align="right" style="padding-top: 10px;padding-right: 10px;">
+	<span class="black" style=" 
+    background-color: #231F20;
+    color: #FFF;
+    padding: .1em 2em .1em 4em;"><small>CHAPTER</small> <span class="size" style="color: #C6C8CA;
+    font-size: 400%;
+    vertical-align: middle;">1</span></span>
+</div id="osi">
+<div class="container col-md-10"  style="padding-left: 10px;margin-top: 3em; font-family: Brush Script MT">
+
+
+	<strong><h4 ><strong>The OSI Reference Model</strong></h5>
+
+	<p class="noindent">Most of us would rather take a ballpeen hammer to our toenails than to hear about the OSI reference model again. It’s taught up front in every networking class we all had to take in college, so we’ve all heard it a thousand times over. That said, those of us who have been around for a while and have taken a certification test or two also understand it usually results in a few easy test answers—provided you understand what they’re asking for. I’m not going to bore you with the same stuff you’ve heard or read a million times before since, as stated earlier, <em>you’re supposed to know this already</em>. What I am going to do, though, is provide a quick rundown for you to peruse, should you need to refresh your memory.</p>
+
+
+	<p class="indent">I thought long and hard about the best way to go over this topic <em>again</em> for our review, and decided I’d ditch the same old boring method of talking this through. Instead, let’s look at the 10,000-foot overhead view of a communications session between two computers depicted in the OSI reference model through the lens of building a network—specifically by trying to figure out how <em>you</em> would build a network from the ground up. Step in the Wayback Machine with Sherman, Mr. Peabody, and me, and let’s go back before networking was invented. How would you do it?</p>
+
+	<div class="sidebarn" style="margin-top: 1em;
+    margin-bottom: 1em;
+    border-top: solid .1em;"><br>
+<p class="notei" ><img class="inline" src="{% static 'images/note.jpg' %}" alt="Images" width="103" height="96" data-mfp-src="/library/view/ceh-certified-ethical/9781260454567/note.jpg"></p>
+<p class="bg" style="background-color: #D2C8C6; border-radius: 5px; padding-left: 5px;"><strong>NOTE</strong>&nbsp;&nbsp;&nbsp;&nbsp;Even something as simple as the OSI model can get really overcomplicated if you read enough into it. For example’s sake, we’re looking at it in this text as it relates to TCP/IP. While TCP/IP generally rules the networking world, there are other protocol stacks that do much the same thing. The OSI model just helps us to talk about their networked connections.</p>
+</div>
+
+
+	<p class="indent">First, looking at those two computers sitting there wanting to talk to one another, you might consider the basics of what is right in front of your eyes: What will you use to connect your computers together so they can transmit signals? In other words, what media would you use? There are several options: copper cabling, glass tubes, even radio waves, among others. And depending on which one of those you pick, you’re going to have to figure out how to use them to transmit useable information. How will you get an electrical signal on the wire to mean something to the computer on the other end? <span id="page_6" epub:type="pagebreak"></span>What part of a radio wave can you use to spell out a word or a color? On top of all that, you’ll need to figure out connectors, interfaces, and how to account for interference. <em>And that’s just Layer 1</em> (the Physical layer), where everything is simply bits—that is, 1’s and 0’s.</p>
+
+
+	<p class="indent">Layer 2 then helps answer the questions involved in growing your network. In figuring out how you would build this whole thing, if you decide to allow more than two nodes to join, how do you handle addressing? With only two systems, it’s no worry—everything sent is received by the guy on the other end—but if you add three or more to the mix, you’re going to have to figure out how to send the message with a unique address. And if your media is shared, how would you guarantee everyone gets a chance to talk, and no one’s message jumbles up anyone else’s? The Data Link layer (Layer 2) handles this using <em>frames,</em> which encapsulate all the data handed down from the higher layers. Frames hold addresses that identify a machine <em>inside</em> a particular network.</p>
+
+	<p class="indent">And what happens if you want to send a message <em>out</em> of your network? It’s one thing to set up addressing so that each computer knows where all the other computers in the neighborhood reside, but sooner or later you’re going to want to send a message to another neighborhood—maybe even another city. And you certainly can’t expect each computer to know the address of every computer <em>in the whole world</em>. This is where Layer 3 steps in, with the <em>packet</em> used to hold network addresses and routing information. It works a lot like ZIP codes on an envelope. While the street address (the physical address from Layer 2) is used to define the recipient inside the physical network, the network address from Layer 3 tells routers along the way which neighborhood (network) the message is intended for.</p>
+
+
+	<p class="indent">Other considerations then come into play, like reliable delivery and flow control. You certainly wouldn’t want a message just blasting out without having any idea if it made it to the recipient; then again, you may want to, depending on what the message is about. And you definitely wouldn’t want to overwhelm the media’s ability to handle the messages you send, so maybe you might not want to put the giant boulder of the message onto our media all at once, when chopping it up into smaller, more manageable pieces makes more sense. The next layer, Transport, handles this and more for you. In Layer 4, the <em>segment</em> handles reliable end-to-end delivery of the message, along with error correction (through retransmission of missing segments) and flow control.</p>
+
+
+	<p class="indent">At this point you’ve set the stage for success. There is media to carry a signal (and you’ve figured how to encode that signal onto that media), addressing inside and outside your network is handled, and you’ve taken care of things like flow control and reliability. Now it’s time to look upward toward the machines themselves and make sure they know how to do what they need to do. The next three layers (from the bottom up—Session, Presentation, and Application) handle the data itself. The Session layer is more of a theoretical entity, with no real manipulation of the data itself—its job is to open, maintain, and close a session. The Presentation layer is designed to put a message into a format all systems can understand. For example, an e-mail crafted in Microsoft Outlook may not necessarily be received by a machine running Outlook, so it must be translated into something any receiver can comprehend—like pure ASCII code for delivery across a network. The Application layer holds all the protocols that allow a user to access information on and across a network. For example, FTP allows <span id="page_7" epub:type="pagebreak"></span>users to transport files across networks, SMTP provides for e-mail traffic, and HTTP allows you to surf the Internet at work while you’re supposed to be doing something else. These three layers make up the “data layers” of the stack, and they map directly to the Application layer of the TCP/IP stack. In these three layers, the <em>protocol data unit (PDU)</em> is referred to as <em>data</em>.</p>
+
+
+	<strong>
+		<div >
+		<p >The layers, and examples of the protocols you’d find in them, are shown in <a href="#">Figure 1-1</a>.</p>
+
+		<center><p class="fimage" id="ch1fig1"><img src="{% static 'images/osi.png' %}" alt="Images" width="649" height="451" data-mfp-src="/library/view/ceh-certified-ethical/9781260454567/F01-01.jpg"></p></center>
+
+		<p><h5><strong>Figure 1-1 OSI reference model</h5></p></strong>
+
+
+	</div>
+	</strong>
+	</strong>
+
+
+
+
+
+<div class="card-body">
+	<a class="btn btn-primary" href="{% url 'ceh2' %}" >Back</a>
+	<a class="btn btn-primary" href="{% url 'ceh4' %}" style="margin-left: 90%; ">Next</a>
+
+</div>
+
+
+</div>
+
+
+{% endblock %}

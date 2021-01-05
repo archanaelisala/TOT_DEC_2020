@@ -1,0 +1,83 @@
+{% extends 'sa/base.html' %}
+{% block title %}ceh{% endblock %}
+{% block content %}
+{% load static %}
+{% load embed_video_tags %}
+
+<div align="right" style="padding-top: 10px;padding-right: 10px;">
+	<span class="black" style=" 
+    background-color: #231F20;
+    color: #FFF;
+    padding: .5em 2em .2em 4em;"><bold>CHAPTER</bold> <span class="size" style="color: #C6C8CA;
+    font-size: 400%;
+    vertical-align: middle;">1</span></span>
+</div>
+<div class="container col-md-10"  style="padding-left: 10px;margin-top: 3em; font-family: Brush Script MT">
+	<strong>
+
+		<p class="indent"><span id="page_10" epub:type="pagebreak"></span>Here, Joe’s computer needs to find an address on its <em>local</em> subnet to deliver the packet to (because every computer is only concerned with, and capable of, sending a message to a machine inside its own subnet). It knows its own physical address but has no idea what physical address belongs to the system that will be answering. The IP address of this device is known—thanks to DNS—but the local, physical address is not. To gain that, Joe’s computer employs yet another protocol, ARP, to figure that out, and when that answer comes back (in this case, the gateway, or local router port), the frame can then be built and sent out to the network (for you network purists out there screaming that ARP isn’t needed for networks that the host already knows should be sent to the default gateway, calm down—it’s just an introductory paragraph). This process of asking for a local address to forward the frame to is repeated at every link in the network chain: every time the frame is received by a router along the way, the router strips off the frame header and trailer and rebuilds the frame based on new ARP answers for that network chain. Finally, when the frame is received by the destination, the server will keep stripping off and handing up bit, frame, packet, segment, and data PDUs, which should result—if everything has worked right—in the return of a SYN/ACK message to get things going.</p>
+
+
+		<div class="sidebarn" style="margin-top: 1em;
+    margin-bottom: 1em;
+    border-top: solid .1em;">
+<p class="notei"><img class="inline" src="{% static 'images/note.jpg' %}" alt="Images" width="87" height="69" data-mfp-src="/library/view/ceh-certified-ethical/9781260454567/extip.jpg"></p>
+<p class="note" >
+<p class="note"style="background-color: #D2C8C6; border-radius: 5px; padding-left: 5px;"><strong>NOTE</strong>&nbsp;&nbsp;&nbsp;&nbsp;This introductory section covers only TCP. UDP—the connectionless, fire-and-forget transport protocol—has its own segment structure (called a <em>datagram</em>) and purpose. There are not as many steps with best-effort delivery, but you’ll find UDP just as important and valuable to your knowledge base as TCP.</p>
+</div>
+
+<p class="indent">To see this in action, take a quick look at the frames at each link in the chain from Joe’s computer to a server in <a href="ch1.xhtml#ch1fig4">Figure 1-4</a>. Note that the frame is ripped off and replaced by a new one to deliver the message within the new network; the source and destination MAC addresses will change, but IPs never do.</p>
+
+
+	<center><p class="fimage" id="ch1fig4"><img src="{% static 'images/F01-04.jpg' %}" alt="Images" width="772" height="612" data-mfp-src="/library/view/ceh-certified-ethical/9781260454567/F01-04.jpg"></p>
+		</center>
+
+
+	<div class="sidebarn" style="margin-top: 1em;
+    margin-bottom: 1em;
+    border-top: solid .1em;">
+<p class="notei"><img class="inline" src="{% static 'images/note.jpg' %}" alt="Images" width="87" height="69" data-mfp-src="/library/view/ceh-certified-ethical/9781260454567/extip.jpg"></p>
+<p class="note" style="background-color: #D2C8C6; border-radius: 5px; padding-left: 5px;"><strong>EXAM TIP</strong>&nbsp;&nbsp;&nbsp;&nbsp;Learn the three-way handshake, expressed as SYN, SYN/ACK, ACK. Know it. Live it. Love it. You will get asked about this, in many ways and formats, <em>several</em> times on your exam.</p>
+</div>
+
+		<p class="indent">Although tons and tons of stuff has been left out—such as port and sequence numbers, which will be of great importance to you later—this touches on all the basics for TCP/IP networking. We’ll be covering it over and over again, and in more detail, throughout this book, so don’t panic if it’s not all registering with you yet. Patience, Grasshopper—this is just an introduction, remember?</p>
+
+
+		<p class="indent">One final thing I should add here before moving on, however, is the concept of network security zones. The idea behind this is that you can divide your networks in such a way that you have the opportunity to manage systems with specific security actions to help control inbound and outbound traffic. You’ve probably heard of these before, but I’d be remiss if I didn’t add them here. The five zones ECC defines are as follows:</p>
+
+		<p class="bullt">•&nbsp;&nbsp;&nbsp;<strong>Internet</strong> Outside the boundary and uncontrolled. You don’t apply security policies to the Internet. Governments try to all the time, but your organization can’t.<span id="page_11" epub:type="pagebreak"></span></p>
+
+		<p class="bull">•&nbsp;&nbsp;&nbsp;<strong>Internet DMZ</strong> The acronym DMZ (for Demilitarized Zone) comes from the military and refers to a section of land between two adversarial parties where there are no weapons or fighting. The idea is you can see an adversary coming across the DMZ and have time to work up a defense. In networking, the idea is the same: it’s a controlled buffer network between you and the uncontrolled chaos of the Internet.</p>
+
+		<div class="sidebarn" style="margin-top: 1em;
+    margin-bottom: 1em;
+    border-top: solid .1em;">
+<p class="notei"><img class="inline" src="{% static 'images/note.jpg' %}" alt="Images" width="103" height="96" data-mfp-src="/library/view/ceh-certified-ethical/9781260454567/note.jpg"></p>
+<p class="note" style="background-color: #D2C8C6; border-radius: 5px; padding-left: 5px;"><strong>NOTE</strong>&nbsp;&nbsp;&nbsp;&nbsp;DMZs aren’t just between the Internet and a network; they can be anywhere an organization decides they want or need a buffer—inside or outside various internets and intranets. DMZ networks provide great opportunity for good security measures, but can also sometimes become an Achilles’ heel when too much trust is put into their creation and maintenance.</p>
+</div>
+
+
+		<p class="bull">•&nbsp;&nbsp;&nbsp;<strong>Production Network Zone</strong> A very restricted zone that strictly controls direct access from uncontrolled zones. The PNZ doesn’t hold users.</p>
+
+		<p class="bull">•&nbsp;&nbsp;&nbsp;<span id="page_12" epub:type="pagebreak"></span><strong>Intranet Zone</strong> A controlled zone that has little-to-no heavy restrictions. This is not to say everything is wide open on the Intranet Zone, but communication requires fewer strict controls internally.</p>
+
+		<p class="bullb">•&nbsp;&nbsp;&nbsp;<strong>Management Network Zone</strong> Usually an area you’d find rife with VLANs and maybe controlled via IPSec and such. This is a highly secured zone with very strict policies.</p>
+
+
+
+
+
+
+	<div class="card-body">
+	<a class="btn btn-primary" href="{% url 'ceh4' %}" >Back</a>
+	<a class="btn btn-primary" href="{% url 'ceh6' %}" style="margin-left: 90%; ">Next</a>
+
+</div>
+</strong>
+
+
+
+</div>
+
+
+{% endblock %}

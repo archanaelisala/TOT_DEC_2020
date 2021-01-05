@@ -1,0 +1,50 @@
+{% extends 'sa/base.html' %}
+{% block title %} Profile {{user.username}} {% endblock %}
+{% block content %}
+{% load static %}
+<div style="padding-left: 20px;font-family: 'Monaco'; ">
+	<p style="">
+		Hacker School (A Unit of Cartel Software Pvt Ltd.) has been implementing several technology motivated training programs that provide Cyber Security Certifications and Courses at Hyderabad and Bangalore locations. As an Accredited Training Center (ATC) of EC-Council we provide,<a href="{% url 'one' %}">Certified Ethical Hacker (CEH)</a>,<a href="{% url 'two' %}">GIAC Penetration Tester.</a>,<a href="{% url 'three' %}">Offensive Security Certified Professional.</a>,<a href="{% url 'four' %}">CREST.</a>,<a href="{% url 'five' %}">Foundstone Ultimate Hacking.</a>,<a href="{% url 'six' %}">Certified Penetration Testing Consultant.</a>,<a href="{% url 'seven' %}">Certified Penetration Testing Engineer.</a>,<a href="{% url 'eight' %}">Ethical hacking course for Beginers.</a>,Certifications to an enormous client base which includes students and professionals. In addition to providing custom security programs at Hacker School, we offer comprehensive IT security training services in the areas of Cyber Security. We work in collaboration with reputed National as well as International IT organizations and Universities to provide the best training to professionals and students. We also offer Corporate Training Programs for IT Organizations and Technical Workshops for Engineering Colleges and Schools to empower them in building a strong foundation.
+
+We help the candidates in gaining knowledge in the pursuit of excellence. Cost-effectiveness, flexibility and value-based delivery of courses make our services prominent in academia and industry of Information Security. Our association with various Non-Profit Organizations and Educational Partners gives access to reach students in every nook and corner in providing Information Security Courses in India. 
+
+<h3>Crazy HackerWorld.com Mission</h3>
+
+Our mission is to provide young engineering minds with a complete range of educational and industrial solutions. Hacker School has built its status on addressing uncommon problems by providing unique solutions. We strive to provide a sense of quality assurance with a professional approach to fulfill the demand of the market segments according to their specific needs and interests.
+
+<h3>Crazy HackerWorld.com Vision</h3>
+
+We have a hunger of the mind which asks for knowledge of all around us, and the more we gain, the more is our desire; the more we see, the more we are capable of seeing. We want students and professionals to unlearn their preconceived ideas before they join our training programs so that they can think simple and innovative.<br>
+
+<h3>Why Crazy HackerWorld.com</h3>
+
+Acknowledging the value for your money and time, Crazy HackerWorld.com furnishes you with an entire 7-layer education<br>
+<h2>pattern for Cyber Security courses:</h2>
+<ul><li>We INSPIRE you to think like a Security Professional</li>
+	<li>We EDUCATE you with the essential Security Techniques</li>
+	<li>We PERPLEX you with the flavors of the concept</li>
+	<li>You LEARN the concept at your pace</li>
+	<li>You PRACTICE the concept in Lab</li>
+	<li>You SOLVE the problems</li>
+	<li>We APPLY the concept in a simulated environment.</li>
+	</ul>
+<h2>Certifications</h2>
+<ul style="    display: block;
+    border-bottom: 1px solid #eeeeee;
+    ">
+
+	<li>Certified Ethical Hacker (CEH)</li>
+	<li>EC-Council Certified Security Analyst (ECSA)</li>
+	<li>Computer Hacking Forensic Investigator (CHFI)</li>
+	<li>Licensed Penetration Tester (LPT)</li>
+	<li>Online Training - EC-Council Certifications</li>
+	<li>EC-Council iWeek</li>
+</ul>
+<h2>Courses</h2>
+<ul style="    display: block;
+    border-bottom: 1px solid #eeeeee;    text-decoration: none;">
+    <li style="li:hover{color:red;}"><a href="{% url 'one' %}">Certified Ethical Hacker (CEH)</a></li><li><a href="{% url 'two' %}">GIAC Penetration Tester.</a></li><li><a href="{% url 'three' %}">Offensive Security Certified Professional.</a></li><li><a href="{% url 'four' %}">CREST.</a></li><li><a href="{% url 'five' %}">Foundstone Ultimate Hacking.</a></li><li><a href="{% url 'six' %}">Certified Penetration Testing Consultant.</a></li><li><a href="{% url 'seven' %}">Certified Penetration Testing Engineer.</a></li><li><a href="{% url 'eight' %}">Ethical hacking course for Beginers.</a></li>
+</ul>
+	</p>
+</div>
+{% endblock %}

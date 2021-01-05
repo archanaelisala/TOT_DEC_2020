@@ -1,0 +1,69 @@
+{% extends 'sa/base.html' %}
+{% block title %}ceh{% endblock %}
+{% block content %}
+{% load static %}
+{% load embed_video_tags %}
+
+<div align="right" style="padding-top: 10px;padding-right: 10px;">
+	<span class="black" style=" 
+    background-color: #231F20;
+    color: #FFF;
+    padding: .1em 2em .1em 4em;"><small>CHAPTER</small> <span class="size" style="color: #C6C8CA;
+    font-size: 400%;
+    vertical-align: middle;">1</span></span>
+</div>
+<div class="container col-md-10"  style="padding-left: 10px;margin-top: 3em; font-family: Brush Script MT">
+
+	<strong>
+	<div class="sidebarn" style="margin-top: 1em;
+    margin-bottom: 1em;
+    border-top: solid .1em;"><br>
+	<p class="notei" ><img class="inline" src="{% static 'images/note.jpg' %}" alt="Images" width="103" height="96" data-mfp-src="/library/view/ceh-certified-ethical/9781260454567/note.jpg"></p>
+
+	<p class="note"  style="background-color: #D2C8C6; border-radius: 5px; padding-left: 5px;"><strong>EXAM TIP</strong>&nbsp;&nbsp;&nbsp;&nbsp;Your OSI knowledge on the test won’t be something as simple as a question of what protocol data unit goes with which layer. Rather, you’ll be asked questions that knowledge of the model will help with; knowing what happens at a given layer will assist you in remembering what tool or protocol the question is asking about. Anagrams can help your memory: “All People Seem To Need Daily Planning” will keep the layers straight, and “Do Sergeants Pay For Beer” will match up the PDUs with the layers.</p>
+
+	<h5 class="h5">TCP/IP Overview</h5>
+
+	<p class="noindent">Keeping in mind <em>you’re supposed to know this already,</em> we’re not going to spend an inordinate amount of time on this subject. That said, it’s vitally important to your success that the basics of TCP/IP networking are as ingrained in your neurons as other important aspects of your life, like maybe Mom’s birthday, the size and bag limit on redfish, the proper ratio of bourbon to anything you mix it with, and the proper way to place toilet paper on the roller (pull paper down, never up). This will be a quick preview, and we’ll revisit (and repeat) this in later chapters.</p>
+
+	<p class="indent"><span id="page_8" epub:type="pagebreak"></span>TCP/IP is a set of communications protocols that allows hosts on a network to talk to one another. This suite of protocols is arranged in a layered stack, much like the OSI reference model, with each layer performing a specific task. <a href="ch1.xhtml#ch1fig2">Figure 1-2</a> shows the TCP/IP stack.</p>
+
+
+	<center><p class="fimage" id="ch1fig2"><img src="{% static 'images/F01-02.jpg' %}" alt="Images" width="656" height="453" data-mfp-src="/library/view/ceh-certified-ethical/9781260454567/F01-02.jpg"></p></center>
+
+	<p class="figcap"><strong>Figure 1-2</strong> TCP/IP stack</p>
+
+	<p class="indent">In keeping with the way this chapter started, let’s avoid a lot of the same stuff you’ve probably heard a thousand times already and simply follow a message from one machine to another through a TCP/IP network. This way, I hope to hit all the basics you need without boring you to tears and causing you to skip the rest of this chapter altogether. Keep in mind there is a whole lot of simultaneous goings-on in any session, so I may take a couple liberties to speed things along.</p>
+
+
+	<p class="indent">Since this is an Ethernet TCP/IP network, Joe’s computer talks to other systems using a format of bits arranged in specific order. These collections of bits in a specific order are called <em>frames</em> (<a href="ch1.xhtml#ch1fig3">Figure 1-3</a> shows a basic Ethernet frame), are built from the inside out, and rely on information handed down from upper layers. In this example, the Application <span id="page_9" epub:type="pagebreak"></span>layer will “hand down” an HTTP request (<em>data</em>) to the Transport layer. At this layer, Joe’s computer looks at the HTTP request and (because it knows HTTP usually works this way) knows this needs to be a connection-oriented session, with stellar reliability to ensure Joe gets everything he asks for without losing anything. It calls on the Transmission Control Protocol (TCP) for that. TCP will go out in a series of messages to set up a communications session with the end station, including a three-step handshake to get things going. This handshake includes a Synchronize segment (SYN), a Synchronize Acknowledgment segment (SYN/ACK), and an Acknowledgment segment (ACK). The first of these—the SYN segment asking the other computer whether it’s awake and wants to talk—gets handed down for addressing to the Internet layer.</p>
+
+
+	<center><p class="fimage" id="ch1fig3"><img src="{% static 'images/F01-03.jpg' %}" alt="Images" width="753" height="471" data-mfp-src="/library/view/ceh-certified-ethical/9781260454567/F01-03.jpg"></p></center>
+
+
+	<p class="figcap"><strong>Figure 1-3</strong> An Ethernet frame</p>
+
+	<p class="indent">This layer needs to figure out what network the request will be answered from (after all, there’s no guarantee it’ll be local—it could be anywhere in the world). It does its job by using another protocol (DNS) to ask what IP address belongs to the URL Joe typed. When that answer comes back, it builds a <em>packet</em> for delivery (which consists of the original data request, the TCP header [SYN], and the IP packet information affixed just before it) and “hands down” the packet to the Network Access layer for delivery.</p>
+
+	<div class="sidebarn" style="margin-top: 1em;
+    margin-bottom: 1em;
+    border-top: solid .1em;">
+<p class="notei"><img class="inline" src="{% static 'images/note.jpg' %}" alt="Images" width="87" height="69" data-mfp-src="/library/view/ceh-certified-ethical/9781260454567/extip.jpg"></p>
+<p class="note" style="background-color: #D2C8C6; border-radius: 5px; padding-left: 5px;"><strong>EXAM TIP</strong>&nbsp;&nbsp;&nbsp;&nbsp;I know it’s not covered right here (we’re going to get to it later in <a href="ch3.xhtml#ch3">Chapter 3</a>), but you really need to know subnetting. You’ll see anywhere from two to five questions per exam on it. There are dozens and dozens of good resources on the Internet to help you on this—just search for “learn subnetting” or something like that and <em>practice.</em></p>
+</div>
+
+
+<div class="card-body">
+	<a class="btn btn-primary" href="{% url 'ceh3' %}" >Back</a>
+	<a class="btn btn-primary" href="{% url 'ceh5' %}" style="margin-left: 90%; ">Next</a>
+
+</div>
+</strong>
+
+
+
+</div>
+
+
+{% endblock %}
